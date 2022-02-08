@@ -10,22 +10,22 @@ lists_days = []
 lists_desc = []
 lists_temp = []
 c_temp = []
-
+## scraping days from website.
 days_list = soup.find_all('div',class_ ="tombstone-container" )
 for days in days_list:
     day_time = days.p.text
     lists_days.append(day_time)
 
-#print(lists_days)
+#print(len(lists_days))
 
 ## short description
 
-days_desc = soup.find_all('div', class_ ="col-sm-10 forecast-text")
+days_desc = soup.find_all('div', class_ ="col-sm-10 forecast-text")[0:9:1]
 for desc in days_desc:
     short_desc = desc.text
     lists_desc.append(short_desc)
 
-#print(lists_desc)
+print(len(lists_desc))
 
 ##Temprature
 days_temp =soup.find_all('p', class_="temp")
@@ -44,10 +44,15 @@ def Temperature():
         new_temp = round((i-32)*(5/9))
         c_temp.append(new_temp)
 Temperature()
-#print(c_temp)
+print(len(c_temp))
 
-date_list =['2022.02.7','2022.02.8','2022.02.9','2022.02.10','2022.02.11','2022.02.12']
-#print(date_list)
+### we  creating a list of our own dates.
+date_list =['2022.02.7','2022.02.8','2022.02.8','2022.02.9','2022.02.9','2022.02.10','2022.02.10','2022.02.11','2022.02.12']
+print(len(date_list))
+
+data = {'Day':lists_days,'Date':date_list,'Description':lists_desc,'Temperature':c_temp}
+df = pd.DataFrame(data)
+print(df)
 
 
 print(len(lists_desc))
