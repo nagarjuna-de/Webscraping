@@ -1,3 +1,4 @@
+from calendar import weekday
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
@@ -12,9 +13,9 @@ panel = soup.find_all('div', id='seven-day-forecast-body')[0]
 #print(len(panel))
 
 day_lists = panel.find_all('li', class_ ='forecast-tombstone')[1::2]
-print(len(day_lists))
+#print(len(day_lists))
 
-#night_lists = panel.find_all('li', class_='forecast-tombstone')[2::2]
+night_lists = panel.find_all('li', class_='forecast-tombstone')[2::2]
 #print(night_lists)
 
 ############################################################################

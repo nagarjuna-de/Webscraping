@@ -19,11 +19,9 @@ panel = soup.find_all('div', id='seven-day-forecast-body')[0]
 day =soup.find_all('p', class_="period-name")[1:9]
 #print(day.get_text())
 
-for element in soup.find_all('p', class_="period-name")[1:9]:
+for element in day:
     days =element.text
     print(days)
-word = days.split()
-print(word)
 
     
 
