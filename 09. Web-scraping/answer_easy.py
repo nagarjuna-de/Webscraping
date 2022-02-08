@@ -56,5 +56,3 @@ df = pd.DataFrame(data)
 
 print(df.head())
 #print(len(lists_desc))
-
-
