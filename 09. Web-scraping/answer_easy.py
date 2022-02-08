@@ -54,5 +54,5 @@ data = {'Day':lists_days,'Date':date_list,'Description':lists_desc,'Temperature'
 df = pd.DataFrame(data)
 #print(df)
 
-print(df.head())
+print(df)
 #print(len(lists_desc))
