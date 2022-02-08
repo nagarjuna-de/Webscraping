@@ -2,7 +2,7 @@ import requests
 from bs4  import BeautifulSoup
 
 url = "https://www.goodreads.com/genres/historical-fiction"
-'''
+
 amazon = "https://www.amazon.es/?tag=bingamazoabk-21&hvadid=79852063932248&hvqmt=e&hvbmt=be&hvdev=c&ref=pd_sl_7opjaapkbf_e"
 
 am_page = requests.get(amazon)
@@ -10,7 +10,7 @@ am_page = requests.get(amazon)
 am_soup = BeautifulSoup(am_page.content, "html.parser")
 
 print(am_page)
-'''
+
 
 page = requests.get(url)
 
@@ -28,7 +28,7 @@ book_soup = BeautifulSoup(book_page.content, "html.parser")
 title = book_soup.find('h1', class_ = "gr-h1 gr-h1--serif")
 
 
-'''
+
 div_content = soup.find_all('div', class_="giveawayPreviewBookContainer")
 
 
@@ -61,6 +61,4 @@ print(book_titles)
 list_of_tittles = []
 for book in book_titles:
     list_of_tittles.append(book.text)
-'''
-
 
